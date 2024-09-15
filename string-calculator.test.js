@@ -15,3 +15,8 @@ test('should return the same number for a single number', () => {
 test('should add multiple numbers separated by commas', () => {
     expect(calculate('1,2,3')).toBe(6);
 });
+
+// Test case 4: Numbers separated by newlines
+test('should add numbers separated by newlines', () => {
+    expect(calculate('1\n2\n3')).toBe(6);
+});

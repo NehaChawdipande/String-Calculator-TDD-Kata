@@ -1,6 +1,9 @@
 function calculate(input) {
        // Split the input string into numbers
-       const numbers = input.split(',');
+       const cleanedInput = input.replace(/\n/g, ',');
+
+       // Split the input into numbers
+       const numbers = cleanedInput.split(',');
 
        // Convert the numbers to integers
        const parsedNumbers = numbers.map(Number);
