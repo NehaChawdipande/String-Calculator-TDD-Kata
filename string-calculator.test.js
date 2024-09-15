@@ -40,3 +40,13 @@ test('should throw an error for negative numbers', () => {
 test('should throw an error for multiple negative numbers', () => {
     expect(() => calculate('-1,2,3,-4')).toThrow('Negatives not allowed: -1, -4');
 });
+
+// Test case 9: Numbers larger than 1000
+test('should ignore numbers larger than 1000', () => {
+    expect(calculate('1001,2,3')).toBe(5);
+});
+
+// Test case 10: Numbers larger than 1000
+test('should ignore numbers larger than 1000', () => {
+    expect(calculate('1001,2,3, 2003')).toBe(5);
+});
