@@ -26,7 +26,17 @@ test('should add numbers with a custom delimiter', () => {
     expect(calculate("//;\n1;2")).toBe(3);
 });
 
-// Test case 5: Numbers separated by custom delimiter
+// Test case 6: Numbers separated by custom delimiter
 test('should add numbers with a custom delimiter', () => {
     expect(calculate("//:\n1:2:3:4")).toBe(10);
+});
+
+// Test case 7: Negative numbers
+test('should throw an error for negative numbers', () => {
+    expect(() => calculate('-1,2,3')).toThrow('Negatives not allowed: -1');
+});
+
+// Test case 8: Multiple Negative numbers
+test('should throw an error for multiple negative numbers', () => {
+    expect(() => calculate('-1,2,3,-4')).toThrow('Negatives not allowed: -1, -4');
 });

@@ -21,7 +21,13 @@ function calculate(input) {
 
        // Convert the numbers to integers
        const parsedNumbers = numbers.map(Number);
-   
+
+       // filter out negative functions and throw an error.
+       const negativeNumbers = parsedNumbers.filter(num => Number(num) < 0);
+       if (negativeNumbers.length > 0) {
+         const negativeNumbersString = negativeNumbers.join(', ');
+         throw new Error(`Negatives not allowed: ${negativeNumbersString}`);
+       }
        // Add the numbers together
        const sum = parsedNumbers.reduce((acc, curr) => acc + curr, 0);
        
