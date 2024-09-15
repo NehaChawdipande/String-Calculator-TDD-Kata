@@ -1,4 +1,4 @@
-String Calculator TDD Kata
+##String Calculator TDD Kata
 
 Solved upto step 7: 
 Test results 
