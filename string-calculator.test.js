@@ -20,3 +20,13 @@ test('should add multiple numbers separated by commas', () => {
 test('should add numbers separated by newlines', () => {
     expect(calculate('1\n2\n3')).toBe(6);
 });
+
+// Test case 5: Numbers separated by custom delimiter
+test('should add numbers with a custom delimiter', () => {
+    expect(calculate("//;\n1;2")).toBe(3);
+});
+
+// Test case 5: Numbers separated by custom delimiter
+test('should add numbers with a custom delimiter', () => {
+    expect(calculate("//:\n1:2:3:4")).toBe(10);
+});
