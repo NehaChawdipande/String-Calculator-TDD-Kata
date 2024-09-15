@@ -46,7 +46,13 @@ test('should ignore numbers larger than 1000', () => {
     expect(calculate('1001,2,3')).toBe(5);
 });
 
-// Test case 10: Numbers larger than 1000
-test('should ignore numbers larger than 1000', () => {
+// Test case 10: Multiple Numbers larger than 1000
+test('should ignore multiple numbers larger than 1000', () => {
     expect(calculate('1001,2,3, 2003')).toBe(5);
+});
+
+
+// Test case 10: custom delimiters of any length
+test('should add numbers with a custom delimiter of any length', () => {
+    expect(calculate("//**\n1**2**3")).toBe(6);
 });
