@@ -1,9 +1,8 @@
 <h2>String Calculator TDD Kata</h2>
 
-Full solution in Javascript
+Solution in Javascript
 Test results: 
-![image](https://github.com/user-attachments/assets/d46a2a31-b332-46b5-a330-ce665eb5a531)
-
+![stringCalc](https://github.com/user-attachments/assets/716ce211-6570-4e94-bffd-09cc07927d08)
 
 
 String Calculator
