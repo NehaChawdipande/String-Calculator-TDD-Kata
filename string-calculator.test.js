@@ -54,8 +54,17 @@ test('should ignore multiple numbers larger than 1000', () => {
     expect(calculate('1001,2,3, 2003')).toBe(5);
 });
 
-
-// Test case 10: custom delimiters of any length
+// Test case 12: custom delimiters of any length
 test('should add numbers with a custom delimiter of any length', () => {
-    expect(calculate("//**\n1**2**3")).toBe(6);
+    expect(calculate("//[**]\n1**2**3")).toBe(6);
+});
+
+// Test case 13: mulitple custom delimiters of any length
+test('should add numbers with a custom delimiter of any length', () => {
+    expect(calculate("//[*][&]\n1*2&3")).toBe(6);
+});
+
+// Test case 14: multiple custom delimiters of any length
+test('should add numbers with a custom delimiter of any length', () => {
+    expect(calculate("//[**][&&]\n1**2&&3")).toBe(6);
 });

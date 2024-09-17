@@ -3,17 +3,20 @@ function calculate(input) {
   const delimiters = [',', '\n'];
 
   // check for custom delimiters
-  const customDelimiterMatch = input.match(/\/\/([^\]]+)\n/);
+  const customDelimiterMatch = input.match(/\/\/(\[.+\]+|\S+)+\n/);
   const delimiter = customDelimiterMatch && customDelimiterMatch[1];
 
-  if (delimiter)
-    delimiters.push(delimiter); // push the delimiter to the array if found.
+  if (delimiter){
+    const temp = delimiter.substring(1, delimiter.length - 1).split('][');
+  console.log(temp);
+
+    delimiters.push(...temp); // push the delimiter to the array if found.
+  }
 
   const delimiterRegex = new RegExp(`[${delimiters.join("|")}]`); // make a regex to split the string based on the delimiter options
-
-
+  console.log(delimiters);
   // Split the input string into numbers
-  const cleanedInput = input.replace(/\/\/([^\]]+)\n/g, '');
+  const cleanedInput = input.replace(/\/\/(\[.+\]+|\S+)+\n/g, '');
 
 
   // Split the input into numbers
