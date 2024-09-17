@@ -41,6 +41,9 @@ test('should throw an error for multiple negative numbers', () => {
     expect(() => calculate('-1,2,3,-4')).toThrow('Negatives not allowed: -1, -4');
 });
 
+test('should throw an error for a non digit character', () => {
+    expect(() => calculate('1,s,3,4')).toThrow('Non digit character not allowed: s');
+});
 // Test case 9: Numbers larger than 1000
 test('should ignore numbers larger than 1000', () => {
     expect(calculate('1001,2,3')).toBe(5);
